@@ -1,7 +1,0 @@
-/vendor
-/storage/logs/*.log
-.idea
-.classpath
-.project
-.setting
-.env
