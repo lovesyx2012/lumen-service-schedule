@@ -26,6 +26,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        /*
+        $schedule->call(function () {
+            file_put_contents("/vagrant_data/github/lumen-service-schedule/log.txt","AAAA",FILE_APPEND);
+        })->everyMinute();
+        */
         $schedule->command('tasks:sms.daily')->everyMinute();
     }
 }

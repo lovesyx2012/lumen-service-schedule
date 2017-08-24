@@ -2,6 +2,11 @@
 
 namespace App\Console\Commands;
 
+use Flc\Alidayu\Client;
+use Flc\Alidayu\App;
+use Flc\Alidayu\Requests\AlibabaAliqinFcSmsNumSend;
+use Flc\Alidayu\Requests\IRequest;
+
 class Sms extends Base
 {
     /**
@@ -18,9 +23,9 @@ class Sms extends Base
      */
     protected $description = '每天短信通知';
 
-
     protected function handleTask()
     {
+        file_put_contents("/vagrant_data/github/lumen-service-schedule/log.txt",config('alidayu.app_key'),FILE_APPEND);
         $this->comment('每天短信通知');
     }
 }
