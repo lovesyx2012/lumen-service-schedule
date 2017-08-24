@@ -15,11 +15,6 @@ abstract class Base extends Command
      */
     public function handle()
     {
-        // 关闭服务请求日志输出
-        if (PHP_SAPI === 'cli') {
-            config(['yunsom.sdk_debug' => false]);
-        }
-
         $startTime = microtime(true);
         $this->comment(PHP_EOL . 'prepare task ' . $this->getSignature() . ' ...');
 
